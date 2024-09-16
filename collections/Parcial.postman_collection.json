@@ -1,0 +1,443 @@
+{
+	"info": {
+		"_postman_id": "da402285-2b9e-4334-bbb8-ea32c3a3c7af",
+		"name": "Parcial Juan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30822230",
+		"_collection_link": "https://unaindes-team.postman.co/workspace/Uniandes-Team-Workspace~e38bd612-d5c7-482c-b578-eede39d81648/collection/38052366-da402285-2b9e-4334-bbb8-ea32c3a3c7af?action=share&source=collection_link&creator=30822230"
+	},
+	"item": [
+		{
+			"name": "Supermarkets",
+			"item": [
+				{
+					"name": "Get supermarkets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/supermarkets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"supermarkets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get supermarket",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/supermarkets/ad2c0d8f-9ed5-41c8-bdbd-2274250eeec9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"supermarkets",
+								"ad2c0d8f-9ed5-41c8-bdbd-2274250eeec9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create supermarket",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Agosto Alkosto\",\n    \"length\": \"45\",\n    \"latitude\": \"56\",\n    \"webPage\": \"www.alkosto.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/supermarkets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"supermarkets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update supermarket",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Agosto Alkostillo\",\n    \"length\": \"45\",\n    \"latitude\": \"56\",\n    \"webPage\": \"www.alkosto.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/supermarkets/ad2c0d8f-9ed5-41c8-bdbd-2274250eeec9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"supermarkets",
+								"ad2c0d8f-9ed5-41c8-bdbd-2274250eeec9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete supermarket",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/supermarkets/ad2c0d8f-9ed5-41c8-bdbd-2274250eeec9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"supermarkets",
+								"ad2c0d8f-9ed5-41c8-bdbd-2274250eeec9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cities",
+			"item": [
+				{
+					"name": "Get cities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get city",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cities/0c6cbd33-55b2-4931-b37f-52334efbcfdc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"0c6cbd33-55b2-4931-b37f-52334efbcfdc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create city",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Bogotá\",\n    \"country\": \"Argentina\",\n    \"population\": \"50000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update city",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Buenos Aires\",\n    \"country\": \"Argentina\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cities/0c6cbd33-55b2-4931-b37f-52334efbcfdc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"0c6cbd33-55b2-4931-b37f-52334efbcfdc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete city",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cities/0c6cbd33-55b2-4931-b37f-52334efbcfdc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"0c6cbd33-55b2-4931-b37f-52334efbcfdc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CitySupermarkets",
+			"item": [
+				{
+					"name": "Add supermarket to city",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"El Dorado\",\n    \"code\": \"ED00\",\n    \"country\": \"Colombia\",\n    \"city\": \"Bogotá\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cities/da3fdfb0-4877-42b0-b0e8-0b409305c797/supermarkets/d59a1750-67b9-4456-9755-465c07c84ff0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"da3fdfb0-4877-42b0-b0e8-0b409305c797",
+								"supermarkets",
+								"d59a1750-67b9-4456-9755-465c07c84ff0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get supermarkets from city",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cities/da3fdfb0-4877-42b0-b0e8-0b409305c797/supermarkets/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"da3fdfb0-4877-42b0-b0e8-0b409305c797",
+								"supermarkets",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get supermarket from city",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cities/107179f3-db6f-40c4-b95f-4574a1a01417/supermarkets/f81d8f57-dce9-47e9-9256-534e78ac70ab",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"107179f3-db6f-40c4-b95f-4574a1a01417",
+								"supermarkets",
+								"f81d8f57-dce9-47e9-9256-534e78ac70ab"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete supermarket from city",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cities/107179f3-db6f-40c4-b95f-4574a1a01417/supermarkets/f81d8f57-dce9-47e9-9256-534e78ac70ab",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"107179f3-db6f-40c4-b95f-4574a1a01417",
+								"supermarkets",
+								"f81d8f57-dce9-47e9-9256-534e78ac70ab"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update supermarkets from city",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n     {\n        \"id\": \"d59a1750-67b9-4456-9755-465c07c84ff0\",\n        \"name\": \"Agosto Alkosto\",\n        \"length\": \"45\",\n        \"latitude\": \"56\",\n        \"webPage\": \"www.alkosto.com\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cities/da3fdfb0-4877-42b0-b0e8-0b409305c797/supermarkets/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cities",
+								"da3fdfb0-4877-42b0-b0e8-0b409305c797",
+								"supermarkets",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
