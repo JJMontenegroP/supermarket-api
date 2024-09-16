@@ -1,7 +1,7 @@
-import { Controller, Get, Post, Param, Body, Put, Delete } from '@nestjs/common';
-import { SupermarketService } from '../services/supermarket.service';
-import { CreateSupermarketDto } from '../dtos/create-supermarket.dto';
-import { UpdateSupermarketDto } from '../dtos/update-supermarket.dto';
+import { Controller, Get, Post, Param, Body, Put, Delete, Patch } from '@nestjs/common';
+import { SupermarketService } from './supermarket.service';
+import { CreateSupermarketDto } from './dtos/create-supermarket.dto';
+import { UpdateSupermarketDto } from './dtos/update-supermarket.dto';
 
 @Controller('supermarkets')
 export class supermarketController {
@@ -13,7 +13,7 @@ export class supermarketController {
     }
 
     @Get(':id')
-    findOne(@Param('id') id: number) {
+    findOne(@Param('id') id: string) {
         return this.supermarketService.findOne(id);
     }
 
@@ -24,14 +24,14 @@ export class supermarketController {
 
     @Put(':id')
     update(
-        @Param('id') id: number,
+        @Param('id') id: string,
         @Body() updateSupermarketDto: UpdateSupermarketDto,
     ) {
         return this.supermarketService.update(id, updateSupermarketDto);
     }
 
     @Delete(':id')
-    delete(@Param('id') id: number) {
+    delete(@Param('id') id: string) {
         return this.supermarketService.delete(id);
     }
 }

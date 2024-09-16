@@ -1,7 +1,7 @@
-import { Controller, Get, Post, Put, Delete, Param, Body, ParseIntPipe } from '@nestjs/common';
-import { CityService } from '../services/city.service';
-import { CreateCityDto } from '../dtos/create-city.dto';
-import { UpdateCityDto } from '../dtos/update-city.dto';
+import { Controller, Get, Post, Put, Delete, Param, Body, ParseIntPipe, Patch } from '@nestjs/common';
+import { CityService } from './city.service';
+import { CreateCityDto } from './dtos/create-city.dto';
+import { UpdateCityDto } from './dtos/update-city.dto';
 
 @Controller('cities')
 export class CityController {
@@ -13,7 +13,7 @@ export class CityController {
     }
 
     @Get(':id')
-    findOne(@Param('id', ParseIntPipe) id: number) {
+    findOne(@Param('id') id: string) {
         return this.cityService.findOne(id);
     }
 
@@ -24,14 +24,14 @@ export class CityController {
 
     @Put(':id')
     update(
-        @Param('id', ParseIntPipe) id: number,
+        @Param('id') id: string,
         @Body() updateCityDto: UpdateCityDto,
     ) {
         return this.cityService.update(id, updateCityDto);
     }
 
     @Delete(':id')
-    delete(@Param('id', ParseIntPipe) id: number) {
+    delete(@Param('id') id: string) {
         return this.cityService.delete(id);
     }
 }

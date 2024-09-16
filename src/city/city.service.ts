@@ -1,9 +1,9 @@
 import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { City } from '../entities/city.entity';
-import { CreateCityDto } from '../dtos/create-city.dto';
-import { UpdateCityDto } from '../dtos/update-city.dto';
+import { City } from './city.entity';
+import { CreateCityDto } from './dtos/create-city.dto';
+import { UpdateCityDto } from './dtos/update-city.dto';
 
 const ALLOWED_COUNTRIES = ['Argentina', 'Ecuador', 'Paraguay'];
 
@@ -18,7 +18,7 @@ export class CityService {
         return this.cityRepository.find();
     }
 
-    async findOne(id: number): Promise<City> {
+    async findOne(id: string): Promise<City> {
         const city = await this.cityRepository.findOneBy({ id });
         if (!city) {
             throw new NotFoundException(`City #${id} not found`);
@@ -34,7 +34,7 @@ export class CityService {
         return this.cityRepository.save(newCity);
     }
 
-    async update(id: number, data: UpdateCityDto): Promise<City> {
+    async update(id: string, data: UpdateCityDto): Promise<City> {
         const city = await this.findOne(id);
         if (!ALLOWED_COUNTRIES.includes(data.country)) {
             throw new BadRequestException('country not allowed');
@@ -43,7 +43,7 @@ export class CityService {
         return this.cityRepository.save(city);
     }
 
-    async delete(id: number): Promise<void> {
+    async delete(id: string): Promise<void> {
         const city = await this.findOne(id);
         await this.cityRepository.remove(city);
     }

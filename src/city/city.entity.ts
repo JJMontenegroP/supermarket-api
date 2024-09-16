@@ -5,12 +5,12 @@ import {
     ManyToMany,
     JoinTable,
 } from 'typeorm';
-import { Supermarket } from 'src/supermarket/entities/supermarket.entity';
+import { Supermarket } from 'src/supermarket/supermarket.entity';
 
 @Entity()
 export class City {
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryGeneratedColumn("uuid")
+    id: string;
 
     @Column()
     name: string;

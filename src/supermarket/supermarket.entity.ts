@@ -1,10 +1,10 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToMany } from 'typeorm';
-import { City } from 'src/city/entities/city.entity';
+import { City } from 'src/city/city.entity';
 
 @Entity()
 export class Supermarket {
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryGeneratedColumn("uuid")
+    id: string;
 
     @Column()
     name: string;

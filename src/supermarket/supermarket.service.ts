@@ -1,9 +1,9 @@
 import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Supermarket } from '../entities/supermarket.entity';
-import { CreateSupermarketDto } from '../dtos/create-supermarket.dto';
-import { UpdateSupermarketDto } from '../dtos/update-supermarket.dto';
+import { Supermarket } from './supermarket.entity';
+import { CreateSupermarketDto } from './dtos/create-supermarket.dto';
+import { UpdateSupermarketDto } from './dtos/update-supermarket.dto';
 
 @Injectable()
 export class SupermarketService {
@@ -18,7 +18,7 @@ export class SupermarketService {
     }
 
     // Método para obtener un supermarket por su ID
-    async findOne(id: number): Promise<Supermarket> {
+    async findOne(id: string): Promise<Supermarket> {
         const supermarket = await this.supermarketRepository.findOne({ where: { id } });
         if (!supermarket) {
             throw new NotFoundException(`Supermarket con ID ${id} not found`);
@@ -35,7 +35,7 @@ export class SupermarketService {
         return this.supermarketRepository.save(newSupermarket);
     }
 
-    async update(id: number, updateSupermarketDto: UpdateSupermarketDto): Promise<Supermarket> {
+    async update(id: string, updateSupermarketDto: UpdateSupermarketDto): Promise<Supermarket> {
         const supermarket = await this.findOne(id);
 
         if (updateSupermarketDto.name && updateSupermarketDto.name.length < 10) {
@@ -46,7 +46,7 @@ export class SupermarketService {
         return this.supermarketRepository.save(supermarket);
     }
 
-    async delete(id: number): Promise<void> {
+    async delete(id: string): Promise<void> {
         const supermarket = await this.findOne(id);
         await this.supermarketRepository.remove(supermarket);
     }
